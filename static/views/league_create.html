@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/welcome"><p class="logo" style="color: rgb(42,115,177) ">f</p><p class="logo" style="color: rgb(236,162,56) ">y</p><p class="logo" style="color: rgb(0,0,0)">d</p><p class="logo" style="color: rgb(57,116,45) ">i</p><p class="logo" style="color: rgb(206,55,72) ">p</p></a>
+            </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="clearfix"></div>
+                    <p class="headings"> Your Leagues </p>
+                    </br>
+                    <div ng-repeat = "leag in leags">
+                        <div class="well well-lg">
+                            <a href="#/leaguedisplay" style="text-decoration: none">
+                            <p class="lead"> {{ leag.name }} </p></a>
+                            <p> Manager: {{ leag.manager }} </p>
+                            <p> Created: {{ leag.created }} </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                <div class="col-lg-6">
+                    <div class="clearfix"></div>
+                    <p class="headings"> Create League: </p>
+                    </br>
+                    <p class="generic"> Name </p>
+                    <input class="form-jumbo"  ng-model="place"  placeholder="Ex. IBM Badminton League"/>
+                    </br>
+                    </br>
+                    <p class="generic"> Organisation </p>
+                    <input class="form-jumbo"  ng-model="place"  placeholder="Ex. IBM Organiser"/>
+                    </br>
+                    </br>
+                    <a href="#/eventcreate" >
+                      <button type="submit" class="btn btn-lg" style="height: 60px; background-color:rgba(206,55,72,0.9); border: 2px rgba(206,55,72,1)" ng-click="myFunction()"><p class ="generic" style="color:rgba(255,255,255,1)">  Next </p></button>
+                    </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
