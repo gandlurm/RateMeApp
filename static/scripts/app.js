@@ -19,6 +19,10 @@ angular
         templateUrl: 'static/views/main.html',
         controller: 'MainCtrl'
       })
+	  .when('/fromfb', {
+        templateUrl: 'static/views/fromfb.html',
+        controller: 'FromFBCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
