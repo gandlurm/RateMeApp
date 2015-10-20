@@ -13,6 +13,7 @@ angular
     'restangular'
     ])
   .config(function ($routeProvider) {
+	  console.log(routeProvider);
 
     $routeProvider
       .when('/', {
