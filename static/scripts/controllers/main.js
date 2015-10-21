@@ -10,6 +10,7 @@ angular.module('frontendApp')
 	var current = $location.path();
 	console.log(current);
 	console.log($location.search());
+	console.log($location.absUrl());
 	
 	var tours = Restangular.one('');
 
