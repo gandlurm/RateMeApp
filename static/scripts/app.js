@@ -16,7 +16,7 @@ angular
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
-	`});
+	});
     $routeProvider
       .when('/', {
         templateUrl: 'RateMyApp/static/views/main.html',
