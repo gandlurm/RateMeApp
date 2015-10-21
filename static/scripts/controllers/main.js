@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontendApp')
-  .controller('MainCtrl', function ($scope, $location, $window, window, location) {
+  .controller('MainCtrl', function ($scope, $location, $windowProvider, window, location) {
 
   /**$scope.myFBFunction = function() {
 		
