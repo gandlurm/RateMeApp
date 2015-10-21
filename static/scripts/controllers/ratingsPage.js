@@ -12,9 +12,9 @@ starApp.controller('StarCtrl', function ($scope) {
         max: 10
     }];
 
-    $scope.getSelectedRating = function (rating) {
+    /**$scope.getSelectedRating = function (rating) {
         console.log(rating);
-    }
+    }**/
     
     $scope.setMinrate= function(){
        $scope.ratings = [{
