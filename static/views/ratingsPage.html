@@ -1,7 +1,7 @@
 <!-- Header -->
     <div class="intro-header">
         <div class="container">
-           <div ng-app="app" ng-controller="RatingController as rating" class="container">
+           <div ng-app="frontendApp" ng-controller="RatingController as rating" class="container">
 				<h1>Angular Star Rating Directive</h1>
 				<div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div>
 					<star-rating ng-model="rating.rating2" readonly="rating.isReadonly"></star-rating>
