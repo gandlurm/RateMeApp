@@ -7,7 +7,7 @@
 									<div class="container-fluid">
 										<!-- Brand and toggle get grouped for better mobile display -->
 										<div class="navbar-header">
-											<a class="navbar-brand" href="#">Star Rating AngularJs Snippet</a>
+											<a class="navbar-brand" href="#">Here is your profile rating</a>
 										</div>
 									</div><!-- /.container-fluid -->
 								</nav>
@@ -16,8 +16,8 @@
 				<div ng-controller="StarCtrl"> 
 					<div class="col-md-12">
 						<div ng-repeat="rating in ratings">
-						<h2 class="navbar-brand">{{rating.current}} /
-							{{rating.max}}</h2>
+						<a class="navbar-brand">{{rating.current}} /
+							{{rating.max}}</a>
 							<div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
 						</div>
 					</div>
