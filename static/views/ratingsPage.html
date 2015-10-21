@@ -1,18 +1,38 @@
 <!-- Header -->
     <div class="intro-header">
         <div class="container">
-           <div ng-app="frontendApp" ng-controller="RatingController as rating" class="container">
-				<h1>Angular Star Rating Directive</h1>
-				<div star-rating ng-model="rating.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div>
-					<star-rating ng-model="rating.rating2" readonly="rating.isReadonly"></star-rating>
-					  <label>
-						<input type="checkbox" ng-model="rating.isReadonly"/>
-						Is Readonly
-					  </label>
-
-				<div><strong>Rating 1:</strong> {{rating.rating1}}</div>
-				<div><strong>Rating 2:</strong> {{rating.rating2}}</div>
-			</div>
+             <div class="col-md-12">
+						<div class="row">
+								<nav class="navbar navbar-default" role="navigation">
+									<div class="container-fluid">
+										<!-- Brand and toggle get grouped for better mobile display -->
+										<div class="navbar-header">
+											<a class="navbar-brand" href="#">Star Rating AngularJs Snippet</a>
+										</div>
+									</div><!-- /.container-fluid -->
+								</nav>
+						</div>
+					</div>
+				  <div ng-controller="StarCtrl"> 
+					<div class=col-md-12>
+						<div ng-repeat="rating in ratings">
+						<h2>{{rating.current}} /
+							{{rating.max}}</h2>
+							<div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+						</div>
+					</div>
+					<div class="col-md-12 clear">
+					  <div class="btn-toolbar" role="toolbar">
+						<div class="btn-group" role="group">
+						  <button type="button" class="btn btn-default" data-ng-click="setMinrate()">Min Rate</button>
+						  <button type="button" class="btn btn-default" data-ng-click="setMaxrate()">Max Rate</button>
+						</div>
+						<div class="btn-group" role="group">
+						<button type="button" class="btn btn-primary" data-ng-click="sendRate()">Send</button>
+						</div>
+					</div>
+				  </div>
+				</div>
 
         </div>
 
