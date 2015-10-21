@@ -76,7 +76,8 @@ h2 {
     &.filled {
       color: #fd0;
     }
-  }
+	}
+}
 
   &.readonly .star.filled {
     color: #666;
