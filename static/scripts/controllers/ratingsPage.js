@@ -6,6 +6,7 @@ var starApp = angular.module('frontendApp');
 
 starApp.controller('StarCtrl', function ($scope) {
     $scope.rating = 0;
+	
     $scope.ratings = [{
         current: 5,
         max: 10
