@@ -4,7 +4,7 @@
   'use strict';
 
   angular
-    .module('frontendApp', [])
+    .module('frontendApp')
     .controller('RatingController', RatingController)
     .directive('starRating', starRating);
 
