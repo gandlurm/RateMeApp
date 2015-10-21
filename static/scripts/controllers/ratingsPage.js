@@ -23,9 +23,6 @@ starApp.controller('StarCtrl', function ($scope) {
        $scope.ratings = [{
         current: 1,
         max: 10
-    }, {
-        current: 1,
-        max: 5
     }];
     }
     
@@ -33,9 +30,6 @@ starApp.controller('StarCtrl', function ($scope) {
        $scope.ratings = [{
         current: 10,
         max: 10
-    }, {
-        current: 5,
-        max: 5
     }];
   }
   
