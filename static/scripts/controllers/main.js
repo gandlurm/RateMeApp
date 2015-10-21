@@ -2,10 +2,12 @@
 
 angular.module('frontendApp')
   .controller('MainCtrl', function ($scope) {
-	$scope.place = null;
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+  /**$scope.myFBFunction = function() {
+		
+		console.log();
+    };**/
+	
+	var current = $location.path();
+	console.log(current);
   });
