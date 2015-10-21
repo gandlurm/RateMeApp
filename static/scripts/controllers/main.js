@@ -12,7 +12,7 @@ angular.module('frontendApp')
 	console.log($location.search());
 	console.log($location.absUrl());
 	var codeStart = $location.absUrl().indexOf('code=')+4;
-	var codeEnd = $location.absUrl().indexOf('#/')+1;
+	var codeEnd = $location.absUrl().indexOf('#/');
 	var code = $location.absUrl().substring(codeStart, codeEnd);
 	
 	console.log(code);
