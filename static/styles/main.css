@@ -58,31 +58,6 @@ p.logo {
 h2 {
   font-family: vegurreg;
 }
-
-.star-rating {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  
-  .star {
-    padding: 1px;
-    color: #ddd;
-    font-size: 20px;
-    text-shadow: .05em .05em #aaa;
-    list-style-type: none;
-    display: inline-block;
-    cursor: pointer;
-
-    &.filled {
-      color: #fd0;
-    }
-  }
-
-
-  &.readonly .star.filled {
-    color: #666;
-  }
-}
 .lead {
     font-size: 50px;
     font-style: normal;
@@ -312,4 +287,27 @@ p.copyright {
        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+.star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  
+  .star {
+    padding: 1px;
+    color: #ddd;
+    font-size: 20px;
+    text-shadow: .05em .05em #aaa;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
 
+    &.filled {
+      color: #fd0;
+    }
+  }
+
+
+  &.readonly .star.filled {
+    color: #666;
+  }
+}
