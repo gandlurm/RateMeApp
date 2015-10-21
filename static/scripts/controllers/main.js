@@ -12,7 +12,6 @@ angular.module('frontendApp')
 	console.log(current);
 	console.log($location.search());
 	
-	code
 	var tours = Restangular.one('');
 
 	tours.getList().then(function(response) {
