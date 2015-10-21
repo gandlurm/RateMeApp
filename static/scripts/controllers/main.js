@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontendApp')
-  .controller('MainCtrl', function ($scope, $location, window, location) {
+  .controller('MainCtrl', function ($scope, $location, $window, window, location) {
 
   /**$scope.myFBFunction = function() {
 		
@@ -11,4 +11,11 @@ angular.module('frontendApp')
 	var current = $location.path();
 	console.log(current);
 	console.log(window.location.search);
+	
+	code
+	var tours = Restangular.one('');
+
+	tours.getList().then(function(response) {
+	  $scope.tours = response;
+	  });
   });
