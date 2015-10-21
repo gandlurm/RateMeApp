@@ -4,7 +4,7 @@
   'use strict';
 var starApp = angular.module('frontendApp', []);
 
-starApp.controller('StarCtrl', ['$scope', function ($scope) {
+starApp.controller('StarCtrl', function ($scope) {
     $scope.rating = 0;
     $scope.ratings = [{
         current: 5,
@@ -42,7 +42,7 @@ starApp.controller('StarCtrl', ['$scope', function ($scope) {
     alert("Thanks for your rates!\n\nFirst Rate: " + $scope.ratings[0].current+"/"+$scope.ratings[0].max
     +"\n"+"Second rate: "+ $scope.ratings[1].current+"/"+$scope.ratings[0].max)
   }
-}]);
+});
 
 starApp.directive('starRating', function () {
     return {
