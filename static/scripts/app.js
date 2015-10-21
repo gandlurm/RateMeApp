@@ -16,14 +16,14 @@ angular
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
-	});
+	`});
     $routeProvider
       .when('/', {
-        templateUrl: 'static/views/main.html',
+        templateUrl: 'RateMyApp/static/views/main.html',
         controller: 'MainCtrl'
       })
 	  .when('/fromfb', {
-        templateUrl: 'static/views/fromfb.html',
+        templateUrl: 'RateMyApp/views/fromfb.html',
         controller: 'FromFBCtrl'
       })
       .otherwise({
