@@ -76,13 +76,13 @@ h2 {
     &.filled {
       color: #fd0;
     }
-	}
-}
+  }
+
 
   &.readonly .star.filled {
     color: #666;
   }
-
+}
 .lead {
     font-size: 50px;
     font-style: normal;
