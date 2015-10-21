@@ -19,7 +19,7 @@ angular
         controller: 'MainCtrl'
       })
 	  .when('/fromfb', {
-        templateUrl: 'views/fromfb.html',
+        templateUrl: 'static/views/fromfb.html',
         controller: 'FromFBCtrl'
       })
       .otherwise({
