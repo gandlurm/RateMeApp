@@ -13,8 +13,6 @@ angular
     'restangular'
     ])
   .config(function ($routeProvider) {
-	  console.log($routeProvider);
-
     $routeProvider
       .when('/', {
         templateUrl: 'static/views/main.html',
