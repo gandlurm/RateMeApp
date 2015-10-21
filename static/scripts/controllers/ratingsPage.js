@@ -10,9 +10,6 @@ starApp.controller('StarCtrl', function ($scope) {
     $scope.ratings = [{
         current: 5,
         max: 10
-    }, {
-        current: 3,
-        max: 5
     }];
 
     $scope.getSelectedRating = function (rating) {
