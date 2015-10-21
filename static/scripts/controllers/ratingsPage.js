@@ -2,7 +2,7 @@
 
 
   'use strict';
-var starApp = angular.module('frontendApp', []);
+var starApp = angular.module('frontendApp');
 
 starApp.controller('StarCtrl', function ($scope) {
     $scope.rating = 0;
