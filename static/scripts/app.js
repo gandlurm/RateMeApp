@@ -13,10 +13,6 @@ angular
     'restangular'
     ])
   .config(function ($routeProvider, $locationProvider) {
-	$locationProvider.html5Mode({
-		enabled: true,
-		requireBase: false
-	});
     $routeProvider
       .when('/', {
         templateUrl: 'RateMyApp/static/views/main.html',
