@@ -24,7 +24,8 @@ angular.module('frontendApp')
 		access_code = response;
 		console.log(access_code.access_token);
 		
-		/**$http.get("https://graph.facebook.com/v2.5/oauth/access_token?client_id=1659954354288861&redirect_uri=http://gandlurm.github.io/RateMyApp&client_secret=8d3df7692518bea961df79ea1f9939bd&code="+code)
+		$location.
+		/**$http.get("https://graph.facebook.com/me/friends?access_token="+access_code.access_token)
 		.success(function(response) {
 			access_code = response;
 			console.log(access_code);
