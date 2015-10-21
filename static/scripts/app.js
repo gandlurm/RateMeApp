@@ -15,11 +15,11 @@ angular
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'RateMyApp/static/views/main.html',
+        templateUrl: 'static/views/main.html',
         controller: 'MainCtrl'
       })
 	  .when('/fromfb', {
-        templateUrl: 'RateMyApp/views/fromfb.html',
+        templateUrl: 'views/fromfb.html',
         controller: 'FromFBCtrl'
       })
       .otherwise({
