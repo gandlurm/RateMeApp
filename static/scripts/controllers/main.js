@@ -24,7 +24,7 @@ angular.module('frontendApp')
 		access_code = response;
 		console.log(access_code.access_token);
 		
-		$location.
+		$location.href("");
 		/**$http.get("https://graph.facebook.com/me/friends?access_token="+access_code.access_token)
 		.success(function(response) {
 			access_code = response;
