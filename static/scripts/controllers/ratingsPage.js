@@ -1,20 +1,24 @@
-'use strict';
+// http://angulartutorial.blogspot.com/2014/03/rating-stars-in-angular-js-using.html
 
-angular.module('frontendApp')
-  .controller('RatingController', function ($scope, $location, $http, Restangular) {
-	
-	// http://angulartutorial.blogspot.com/2014/03/rating-stars-in-angular-js-using.html
+
+  'use strict';
+
+  angular
+    .module('frontendApp', [])
+    .controller('RatingController', RatingController)
+    .directive('starRating', starRating);
+
+  function RatingController() {
     this.rating1 = 5;
     this.rating2 = 2;
     this.isReadonly = true;
     this.rateFunction = function(rating) {
       console.log('Rating selected: ' + rating);
     };
+  }
 
-		
-  })
-  .directive('starRating', function(){
-	   return {
+  function starRating() {
+    return {
       restrict: 'EA',
       template:
         '<ul class="star-rating" ng-class="{readonly: readonly}">' +
@@ -55,5 +59,5 @@ angular.module('frontendApp')
         });
       }
     };
-	  
-});
+  }
+
