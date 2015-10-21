@@ -22,5 +22,5 @@ angular.module('frontendApp')
 	tours.getList().then(function(response) {
 	  $scope.tours = response;
 	  });
-	if()
+
   });
