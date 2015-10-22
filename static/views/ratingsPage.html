@@ -19,8 +19,8 @@
 				<div ng-controller="StarCtrl"> 
 					<div class="col-md-12">
 						<div ng-repeat="rating in ratings">
-							<div>{{rating.current}} /
-							{{rating.max}}</div>
+							<div><b>{{rating.current}} /
+							{{rating.max}}<b></div>
 							<div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
 						</div>
 					</div>
