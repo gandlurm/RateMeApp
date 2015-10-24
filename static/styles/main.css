@@ -5,29 +5,31 @@
  */
 @import "compass/css3";
 body,
-.rating {
-    color: #a9a9a9;
-    margin: 0;
-    padding: 0;
-}
-ul.rating {
-    display: inline-block;
-}
-.rating li {
+
+.star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  
+  .star {
+    padding: 1px;
+    color: #ddd;
+    font-size: 20px;
+    text-shadow: .05em .05em #aaa;
     list-style-type: none;
     display: inline-block;
-    padding: 1px;
-    text-align: center;
-    font-weight: bold;
     cursor: pointer;
-    font-size:20px;
+
+    &.filled {
+      color: #fd0;
+    }
+  }
+
+  &.readonly .star.filled {
+    color: #666;
+  }
 }
-.rating .filled {
-    color: orangered;
-}
-.clear{
-  margin-top:20px;
-}
+
 html {
     width: 100%;
     height: 100%;
