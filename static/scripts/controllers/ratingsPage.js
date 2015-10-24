@@ -1,59 +1,117 @@
-  'use strict';
+'use strict';
 
-  angular
-    .module('frontendApp')
-    .controller('RatingController', RatingController)
-    .directive('starRating', starRating);
+var app = angular.module('frontendApp');
 
-  function RatingController() {
-    this.rating1 = 5;
-    this.rating2 = 2;
-    this.isReadonly = true;
-    this.rateFunction = function(rating) {
-      console.log('Rating selected: ' + rating);
+app.controller('appController', ['$scope', function ($scope) {
+    $scope.starRating1 = 4;
+    $scope.starRating2 = 5;
+    $scope.starRating3 = 2;
+    $scope.hoverRating1 = $scope.hoverRating2 = $scope.hoverRating3 = 0;
+
+    $scope.click1 = function (param) {
+        console.log('Click(' + param + ')');
     };
-  }
 
-  function starRating() {
+    $scope.mouseHover1 = function (param) {
+        console.log('mouseHover(' + param + ')');
+        $scope.hoverRating1 = param;
+    };
+
+    $scope.mouseLeave1 = function (param) {
+        console.log('mouseLeave(' + param + ')');
+        $scope.hoverRating1 = param + '*';
+    };
+
+    $scope.click2 = function (param) {
+        console.log('Click');
+    };
+
+    $scope.mouseHover2 = function (param) {
+        console.log('mouseHover(' + param + ')');
+        $scope.hoverRating1 = param;
+    };
+
+    $scope.mouseLeave2 = function (param) {
+        console.log('mouseLeave(' + param + ')');
+        $scope.hoverRating2 = param + '*';
+    };
+
+    $scope.click3 = function (param) {
+        console.log('Click');
+    };
+
+    $scope.mouseHover3 = function (param) {
+        console.log('mouseHover(' + param + ')');
+        $scope.hoverRating3 = param;
+    };
+
+    $scope.mouseLeave3 = function (param) {
+        console.log('mouseLeave(' + param + ')');
+        $scope.hoverRating3 = param + '*';
+    };
+}]);
+
+app.directive('starRating', function () {
     return {
-      restrict: 'EA',
-      template:
-        '<ul class="star-rating" ng-class="{readonly: readonly}">' +
-        '  <li ng-repeat="star in stars" class="star" ng-class="{filled: star.filled}" ng-click="toggle($index)">' +
-        '    <i class="fa fa-star"></i>' + // or &#9733
-        '  </li>' +
-        '</ul>',
-      scope: {
-        ratingValue: '=ngModel',
-        max: '=?', // optional (default is 5)
-        onRatingSelect: '&?',
-        readonly: '=?'
-      },
-      link: function(scope, element, attributes) {
-        if (scope.max == undefined) {
-          scope.max = 5;
+        scope: {
+            rating: '=',
+            maxRating: '@',
+            readOnly: '@',
+            click: "&",
+            mouseHover: "&",
+            mouseLeave: "&"
+        },
+        restrict: 'EA',
+        template:
+            "<div style='display: inline-block; margin: 0px; padding: 0px; cursor:pointer;' ng-repeat='idx in maxRatings track by $index'> \
+                    <img ng-src='{{((hoverValue + _rating) <= $index) && \"http://www.codeproject.com/script/ratings/images/star-empty-lg.png\" || \"http://www.codeproject.com/script/ratings/images/star-fill-lg.png\"}}' \
+                    ng-Click='isolatedClick($index + 1)' \
+                    ng-mouseenter='isolatedMouseHover($index + 1)' \
+                    ng-mouseleave='isolatedMouseLeave($index + 1)'></img> \
+            </div>",
+        compile: function (element, attrs) {
+            if (!attrs.maxRating || (Number(attrs.maxRating) <= 0)) {
+                attrs.maxRating = '5';
+            };
+        },
+        controller: function ($scope, $element, $attrs) {
+            $scope.maxRatings = [];
+
+            for (var i = 1; i <= $scope.maxRating; i++) {
+                $scope.maxRatings.push({});
+            };
+
+            $scope._rating = $scope.rating;
+			
+			$scope.isolatedClick = function (param) {
+				if ($scope.readOnly == 'true') return;
+
+				$scope.rating = $scope._rating = param;
+				$scope.hoverValue = 0;
+				$scope.click({
+					param: param
+				});
+			};
+
+			$scope.isolatedMouseHover = function (param) {
+				if ($scope.readOnly == 'true') return;
+
+				$scope._rating = 0;
+				$scope.hoverValue = param;
+				$scope.mouseHover({
+					param: param
+				});
+			};
+
+			$scope.isolatedMouseLeave = function (param) {
+				if ($scope.readOnly == 'true') return;
+
+				$scope._rating = $scope.rating;
+				$scope.hoverValue = 0;
+				$scope.mouseLeave({
+					param: param
+				});
+			};
         }
-        function updateStars() {
-          scope.stars = [];
-          for (var i = 0; i < scope.max; i++) {
-            scope.stars.push({
-              filled: i < scope.ratingValue
-            });
-          }
-        };
-        scope.toggle = function(index) {
-          if (scope.readonly == undefined || scope.readonly === false){
-            scope.ratingValue = index + 1;
-            scope.onRatingSelect({
-              rating: index + 1
-            });
-          }
-        };
-        scope.$watch('ratingValue', function(oldValue, newValue) {
-          if (newValue) {
-            updateStars();
-          }
-        });
-      }
     };
-  }
+});
