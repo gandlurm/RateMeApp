@@ -20,7 +20,7 @@ angular
       })
 	  .when('/ratingsPage', {
         templateUrl: 'static/views/ratingsPage.html',
-        controller: 'StarCtrl'
+        controller: 'RatingController'
       })
 	  .when('/fromfb', {
         templateUrl: 'static/views/fromfb.html',
